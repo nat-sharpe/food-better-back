@@ -1,0 +1,25 @@
+{
+  "name": "food-better-back",
+  "version": "1.0.0",
+  "description": "An app built in React Native which implements Augmented Reality technology to help people shop for groceries while on a restrictive diet.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nat-sharpe/food-better.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nat-sharpe/food-better/issues"
+  },
+  "homepage": "https://github.com/nat-sharpe/food-better#readme",
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3"
+  }
+}
