@@ -13,7 +13,7 @@ app.post('/scan', (req, res) => {
   let response = {
     status: (item.id > 4) ? false : true
   };
-  res.send(JSON.stringify(response));
+  res.end(JSON.stringify(response));
 });
 
 
