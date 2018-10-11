@@ -1,0 +1,2 @@
+INSERT INTO items (allowed, title, brand, imageURL, carbs, calories, organic, vegan, glutenFree)
+VALUES ('1', 'true', 'Creamy Peanut Butter', 'Peter Pan', 'https://images-na.ssl-images-amazon.com/images/I/61wP-m6ehjL._SY550_.jpg', 16, 220, 'false', 'false', 'true');
