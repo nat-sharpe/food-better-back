@@ -84,12 +84,8 @@ app.post('/scan', (req, res) => {
   // let response = checkAllowed(item);
   db.one(`SELECT * FROM items WHERE id = ${item.id};`)
       .then(function (data) {
-        res.status(200)
-          .json({
-            status: 'success',
-            data: data,
-            message: 'Retrieved ALL puppies'
-          });
+        console.log(data);
+        res.end(data)
       })
       .catch(function (err) {
         return next(err);
