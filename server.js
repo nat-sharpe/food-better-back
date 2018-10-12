@@ -63,7 +63,7 @@ const checkAllowed = scannedItem => {
   let itemData = dummyDatabase.find(item => {
     return item.id === scannedItem.id;
   });
-
+  itemData.allowed = true;
   if (scannedItem.maxCarbs && scannedItem.maxCarbs < itemData.carbs) {
     itemData.allowed = false;
   } else if (scannedItem.maxCalories && scannedItem.maxCalories < itemData.calories) {
