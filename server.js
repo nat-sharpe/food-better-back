@@ -82,7 +82,7 @@ app.post('/scan', (req, res) => {
   let item = req.body;
   console.log(item);
   // let response = checkAllowed(item);
-  db.one(`SELECT * FROM items WHERE id = ${item.id};`)
+  db.one(`SELECT * FROM items WHERE id = ${item.id}`)
       .then(function (data) {
         console.log(data);
         res.end(data)
