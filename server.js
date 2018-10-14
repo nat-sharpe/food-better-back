@@ -59,29 +59,17 @@ const dummyDatabase = [
   }
 ];
 
-const checkAllowed = scannedItem => {
+const findItem = scannedItem => {
   let itemData = dummyDatabase.find(item => {
     return item.id === scannedItem.id;
   });
-  itemData.allowed = true;
-  if (scannedItem.maxCarbs && scannedItem.maxCarbs < itemData.carbs) {
-    itemData.allowed = false;
-  } else if (scannedItem.maxCalories && scannedItem.maxCalories < itemData.calories) {
-    itemData.allowed = false;
-  } else if ((scannedItem.organic === true) && (itemData.organic === false)) {
-    itemData.allowed = false;
-  } else if ((scannedItem.vegan === true) && (itemData.vegan === false)) {
-    itemData.allowed = false;
-  } else if ((scannedItem.glutenFree === true) && (itemData.glutenFree === false)) {
-    itemData.allowed = false;
-  }
   return itemData;
 }
 
 app.post('/scan', (req, res) => {
   let item = req.body;
   console.log(item);
-  let response = checkAllowed(item);
+  let response = findItem(item);
   // db.one(`SELECT * FROM items WHERE id = ${item.id}`)
   //     .then(function (data) {
   //       console.log(data);
