@@ -69,11 +69,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/scan', (req, res) => {
   let item = req.body;
   console.log(item);
+  console.log(item.id);
   // let response = findItem(item);
   db.one(`SELECT * FROM items WHERE id = ${item.id}`)
       .then(data => {
+        console.log(data);
         data.json()
         .then(jsonData => {
+          console.log(jsonData);
           res.end(jsonData)
         })
       })
