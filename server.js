@@ -74,11 +74,8 @@ app.post('/scan', (req, res) => {
   db.one(`SELECT * FROM items WHERE id = ${item.id}`)
       .then(data => {
         console.log(data);
-        data.json()
-      })
-      .then(jsonData => {
-        console.log(jsonData);
-        res.end(jsonData)
+        console.log(JSON.stringify(data));
+        res.end(JSON.stringify(data))
       })
       .catch(function (err) {
         console.log(err);
