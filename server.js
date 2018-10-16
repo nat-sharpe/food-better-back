@@ -75,10 +75,10 @@ app.post('/scan', (req, res) => {
       .then(data => {
         console.log(data);
         data.json()
-        .then(jsonData => {
-          console.log(jsonData);
-          res.end(jsonData)
-        })
+      })
+      .then(jsonData => {
+        console.log(jsonData);
+        res.end(jsonData)
       })
       .catch(function (err) {
         return next(err);
