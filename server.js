@@ -81,7 +81,7 @@ app.post('/scan', (req, res) => {
         res.end(jsonData)
       })
       .catch(function (err) {
-        return next(err);
+        console.log(err);
       });
   // res.end(JSON.stringify(response));
 });
